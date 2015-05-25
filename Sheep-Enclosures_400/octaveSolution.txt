@@ -1,0 +1,12 @@
+Using the built in polyarea and convexhull function this is easy
+
+First split the file into 2 seperater files containing xValues and yValues respectivly. (Easy to do in any language)
+
+Then in octave
+
+xVals = load("sheepXInput.txt");
+yVals = load("sheepYInput.txt");
+insideArea = polyarea(xVals, yVals);
+vi = convhull(xVals, yVals);
+outerArea = polyarea(xVals(vi), yVals(vi));
+outerArea - insideArea
